@@ -1,4 +1,6 @@
+import { Link } from "lucide-react";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
@@ -6,6 +8,17 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
     <nav className="bg-gray-800 py-3 shadow-sm fixed top-0 left-0 w-full z-50 m">
       <div className="container text-white p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">E-commerce</h1>
+
+         <NavLink
+              to="/card"
+              className={({ isActive }) =>
+                `relative before:absolute before:w-0 before:h-0.5 before:bg-primary-800 before:-bottom-1 before:left-0 before:transition-[width] before:duration-300 before:ease-in-out hover:before:w-full ${
+                  isActive ? "before:w-full font-semibold" : ""
+                }`
+              }
+            >
+              card
+            </NavLink>
 
         {/* <ul className="flex space-x-4">
           <li>
